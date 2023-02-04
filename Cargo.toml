@@ -1,27 +1,22 @@
 [package]
 name = "rusty_convertalizer"
 version = "0.1.0"
-authors = ["Emil Ernerfeldt <emil.ernerfeldt@gmail.com>"]
+authors = ["anzio <anzbert@gmail.com>"]
 edition = "2021"
 
 [dependencies]
 egui = "0.20.0"
-eframe = { version = "0.20.0", default-features = false, features = [
-    "default_fonts", # Embed the default egui fonts.
-    "glow",          # Use the glow rendering backend. Alternative: "wgpu".
-] }
+eframe = { version = "0.20.0", features = [] }
+# eframe = { version = "0.20.0", default-features = false, features = [
+#     "glow", # Use the glow rendering backend. Alternative: "wgpu".
+#     "default_fonts", # Embed the default egui fonts.
+# ] }
+
 symphonia = "0.5.2"
 
-# native:
-[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-tracing-subscriber = "0.3"
-
-[profile.release]
-opt-level = 2 # fast and small wasm
-
-# Optimize all dependencies even in debug builds:
-[profile.dev.package."*"]
-opt-level = 2
+# # Optimize all dependencies even in debug builds:
+# [profile.dev.package."*"]
+# opt-level = 2
 
 [patch.crates-io]
 # If you want to use the bleeding edge version of egui and eframe:

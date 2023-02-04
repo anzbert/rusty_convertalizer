@@ -1,15 +1,7 @@
 #[derive(Default)]
 pub struct App {
-    // label: String,
-    // value: f32,
     dropped_files: Vec<egui::DroppedFile>,
 }
-
-// impl Default for App {
-//     fn default() -> Self {
-//         Self {}
-//     }
-// }
 
 impl App {
     /// Called once before the first frame.
@@ -28,18 +20,6 @@ impl eframe::App for App {
 
         // Examples of how to create different panels and windows.
         // For inspiration and more examples, go to https://emilk.github.io/egui
-
-        // #[cfg(not(target_arch = "wasm32"))] // no File->Quit on web pages!
-        // egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
-        //     // The top panel is often a good place for a menu bar:
-        //     egui::menu::bar(ui, |ui| {
-        //         ui.menu_button("File", |ui| {
-        //             if ui.button("Quit").clicked() {
-        //                 _frame.close();
-        //             }
-        //         });
-        //     });
-        // });
 
         // The central panel the region left after adding TopPanel's and SidePanel's
         egui::CentralPanel::default().show(ctx, |ui| {
